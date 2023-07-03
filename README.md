@@ -26,7 +26,7 @@ Add dependencies in your `build.gradle`:
 
 ```groovy
 	dependencies {
-	    implementation 'com.github.mklkj:realtimeblurview:1.2.3'
+	    implementation 'com.github.mklkj:realtimeblurview:1.2.4'
 	}
 ```
 
@@ -72,7 +72,7 @@ I've run the sample on some old phones like Samsung Galaxy S2, Samsung Galaxy S3
 
 # Changelog
 
-### 1.2.2 (2023-07-03)
+### 1.2.2,3,4 (2023-07-03)
 
 Workaround crash caused by `Software rendering doesn't support hardware bitmaps` exception
 

@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -263,7 +264,9 @@ public class RealtimeBlurView extends View {
 						decor.getBackground().draw(mBlurringCanvas);
 					}
 					decor.draw(mBlurringCanvas);
-				} catch (StopException e) {
+				} catch (RuntimeException e) {
+					// ignore `Software rendering doesn't support hardware bitmaps` errors
+//					Log.e("RealtimeBlurView", "Unexpected error occur", e);
 				} finally {
 					mIsRendering = false;
 					RENDERING_COUNT--;

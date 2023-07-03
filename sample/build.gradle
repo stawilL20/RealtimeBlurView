@@ -6,6 +6,7 @@ dependencies {
 }
 
 android {
+    namespace 'com.github.mmin18.realtimeblurview.sample'
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -16,8 +17,8 @@ android {
         renderscriptSupportModeEnabled true
     }
 
-    lintOptions {
-        abortOnError rootProject.ext.lintAbortOnError
+    lint {
+        abortOnError lintAbortOnError
     }
 
     compileOptions {
@@ -44,5 +45,9 @@ android {
         // by a similar customization.
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
+    }
+    buildFeatures {
+        renderScript true
+        aidl true
     }
 }

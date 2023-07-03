@@ -18,7 +18,7 @@ import com.github.mmin18.realtimeblurview.R;
 
 /**
  * A realtime blurring overlay (like iOS UIVisualEffectView). Just put it above
- * the view you want to blur and it doesn't have to be in the same ViewGroup
+ * the view you want to blur, and it doesn't have to be in the same ViewGroup
  * <ul>
  * <li>realtimeBlurRadius (10dp)</li>
  * <li>realtimeDownsampleFactor (4)</li>
@@ -357,5 +357,5 @@ public class RealtimeBlurView extends View {
 	private static class StopException extends RuntimeException {
 	}
 
-	private static StopException STOP_EXCEPTION = new StopException();
+	private static final StopException STOP_EXCEPTION = new StopException();
 }

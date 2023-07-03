@@ -70,7 +70,7 @@ afterEvaluate {
 
                 groupId = 'com.github.mklkj'
                 artifactId = 'realtimeblurview'
-                version = '1.2.2'
+                version = '1.2.3'
 //            desc = 'A realtime blurring overlay for Android (like iOS UIVisualEffectView)'
 //            website = 'https://github.com/mklkj/RealtimeBlurView'
             }

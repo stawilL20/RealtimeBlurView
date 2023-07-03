@@ -26,7 +26,7 @@ Add dependencies in your `build.gradle`:
 
 ```groovy
 	dependencies {
-	    implementation 'com.github.mklkj:realtimeblurview:1.2.2'
+	    implementation 'com.github.mklkj:realtimeblurview:1.2.3'
 	}
 ```
 

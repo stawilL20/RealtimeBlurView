@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -18,7 +19,7 @@ import com.github.mmin18.realtimeblurview.R;
 
 /**
  * A realtime blurring overlay (like iOS UIVisualEffectView). Just put it above
- * the view you want to blur and it doesn't have to be in the same ViewGroup
+ * the view you want to blur, and it doesn't have to be in the same ViewGroup
  * <ul>
  * <li>realtimeBlurRadius (10dp)</li>
  * <li>realtimeDownsampleFactor (4)</li>
@@ -263,7 +264,9 @@ public class RealtimeBlurView extends View {
 						decor.getBackground().draw(mBlurringCanvas);
 					}
 					decor.draw(mBlurringCanvas);
-				} catch (StopException e) {
+				} catch (RuntimeException e) {
+					// ignore `Software rendering doesn't support hardware bitmaps` errors
+//					Log.e("RealtimeBlurView", "Unexpected error occur", e);
 				} finally {
 					mIsRendering = false;
 					RENDERING_COUNT--;
@@ -357,5 +360,5 @@ public class RealtimeBlurView extends View {
 	private static class StopException extends RuntimeException {
 	}
 
-	private static StopException STOP_EXCEPTION = new StopException();
+	private static final StopException STOP_EXCEPTION = new StopException();
 }
